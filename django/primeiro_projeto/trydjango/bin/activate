@@ -40,7 +40,7 @@ deactivate () {
 # unset irrelevant variables
 deactivate nondestructive
 
-VIRTUAL_ENV="/home/merlin/Desktop/jamiledev/primeiro_projeto/trydjango"
+VIRTUAL_ENV="/home/merlin/Desktop/jamiledev/django/primeiro_projeto/trydjango"
 export VIRTUAL_ENV
 
 _OLD_VIRTUAL_PATH="$PATH"

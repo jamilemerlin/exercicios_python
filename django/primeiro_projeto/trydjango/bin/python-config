@@ -1,4 +1,4 @@
-#!/home/merlin/Desktop/jamiledev/primeiro_projeto/trydjango/bin/python
+#!/home/merlin/Desktop/jamiledev/django/primeiro_projeto/trydjango/bin/python
 
 import sys
 import getopt

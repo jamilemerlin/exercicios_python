@@ -7,7 +7,7 @@ alias deactivate 'test $?_OLD_VIRTUAL_PATH != 0 && setenv PATH "$_OLD_VIRTUAL_PA
 # Unset irrelevant variables.
 deactivate nondestructive
 
-setenv VIRTUAL_ENV "/home/merlin/Desktop/jamiledev/primeiro_projeto/trydjango"
+setenv VIRTUAL_ENV "/home/merlin/Desktop/jamiledev/django/primeiro_projeto/trydjango"
 
 set _OLD_VIRTUAL_PATH="$PATH"
 setenv PATH "$VIRTUAL_ENV/bin:$PATH"

@@ -1,4 +1,4 @@
-#!/home/merlin/Desktop/jamiledev/primeiro_projeto/trydjango/bin/python3
+#!/home/merlin/Desktop/jamiledev/django/primeiro_projeto/trydjango/bin/python3
 from django.core import management
 
 if __name__ == "__main__":
