@@ -15,11 +15,15 @@ def product_list_view(request):
 def product_edit_view(request, id):
     product = Product.objects.get(id=id)
 
-    if request.POST and request.POST['action'] == "DELETE":
+    if request.POST and "action" in request.POST and request.POST['action'] == "DELETE":
         product.delete()
         return redirect('/products/')
 
     form = ProductForm(request.POST or None, instance=product)
+
+    if request.POST and form.is_valid():
+        form.save()
+
     context = {'form': form}
     return render(request, 'products/product_create.html', context)
 

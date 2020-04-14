@@ -16,11 +16,9 @@ Including another URLconf
 from django.conf import settings
 from django.conf.urls.static import static
 from django.contrib import admin
-from django.urls import path
+from django.urls import path, include
+
 from pages.views import home_view, contact_view, about_view, social_view
-from products.views import product_list_view, product_detail_view, product_create_view, product_edit_view
-
-
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -28,12 +26,7 @@ urlpatterns = [
     path('contact/', contact_view),
     path('about/', about_view),
     path('social/', social_view),
-
-    # Products - CRUD (Create, Retrieve, Update, Delete)
-    path('products/', product_list_view),
-    path('products/create/', product_create_view),
-    path('products/<int:id>/', product_detail_view),
-    path('products/<int:id>/edit', product_edit_view),
+    path('products/', include('products.urls')),
 
     # path('product/', product_detail_view),
     # path('create/', product_create_view),
