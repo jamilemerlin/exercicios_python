@@ -1,12 +1,17 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>In App template: {{ product.title }}</h1>
-<p>{% if product.description is test and product.description != '' and product.description != None %}{{ product.description }}{% else %}Description Coming Soon{% endif %}</p>
-{{ product.price }}
-<p>
-    <a href="/products">Back</a>
-    |
-    <a href="{{ product.get_edit_url }}">Edit</a>
-</p>
+<div class="jumbotron">
+    <div class="container">
+        <h1>{{ product.title }}</h1>
+        <div>views: {{ product.count_views }}</div>
+        <p>{% if product.description is test and product.description != '' and product.description != None %}{{ product.description }}{% else %}Description Coming Soon{% endif %}</p>
+        <div>${{ product.price }}</div>
+        <div>
+            <a class="btn btn-primary" href="{{ product.get_absolute_url }}buy">Buy</a>
+            |
+            <a class="btn btn-link" href="{{ product.get_edit_url }}">Edit</a>
+        </div>
+    </div>
+</div>
 {% endblock %}

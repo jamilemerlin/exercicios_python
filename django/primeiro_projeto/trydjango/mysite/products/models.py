@@ -8,6 +8,9 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=1000, decimal_places=2)
     summary = models.TextField(blank=False, null=False)
     featured = models.BooleanField(default=False)
+    total_in_stock = models.PositiveIntegerField(default=0)
+    count_sells = models.PositiveIntegerField(default=0)
+    count_views = models.PositiveIntegerField(default=0)
 
     def __str__(self):
         return self.title
@@ -21,3 +24,7 @@ class Product(models.Model):
 
     def get_edit_url(self):
         return reverse("products:product_edit", kwargs={"id": self.id})
+
+    def sell(self, amount):
+        self.total_in_stock -= amount
+        self.count_sells += amount

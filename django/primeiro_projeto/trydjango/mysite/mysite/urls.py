@@ -18,15 +18,21 @@ from django.conf.urls.static import static
 from django.contrib import admin
 from django.urls import path, include
 
-from pages.views import home_view, contact_view, about_view, social_view
+from pages.views import PagesView, home_view
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', home_view, name='home'),
-    path('contact/', contact_view),
-    path('about/', about_view),
-    path('social/', social_view),
+    # path('', home_view, name='home'),
+    # path('contact/', contact_view),
+    # path('about/', about_view),
+    # path('social/', social_view),
     path('products/', include('products.urls')),
+    path('blog/', include('blog.urls')),
+    path('', home_view, name='home'),
+    path('contact/', PagesView.as_view(template_name='contact.html'), name='contact'),
+    path('social/', PagesView.as_view(template_name='social.html'), name='social'),
+    path('about/', PagesView.as_view(template_name='about.html'), name='about')
+
 
     # path('product/', product_detail_view),
     # path('create/', product_create_view),
